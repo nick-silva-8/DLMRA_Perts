@@ -1,0 +1,24 @@
+## Command for a fast q run
+
+$APP fastqc \
+-t 3 \
+~/Bioinformatics/MDR_DATA/Doxorubicin_40nM_1.fq.gz \
+~/Bioinformatics/MDR_DATA/Doxorubicin_40nM_2.fq.gz \
+~/Bioinformatics/MDR_DATA/Doxorubicin_40nM_3.fq.gz \
+-o $PROJECT/1_fastQC
+
+## command to run the fastp
+
+$APP fastp  \
+-i ~/Bioinformatics/MDR_DATA/Doxorubicin_40nM_3.fq.gz \
+-o $PROJECT/2_fastp/Doxorubicin_40nM_3.fq.gz \
+-h $PROJECT/2_fastp/Doxorubicin_40nM_3.html \
+-j $PROJECT/2_fastp/Doxorubicin_40nM_3.json
+
+Post trimming
+$APP fastqc \
+-t 3 \
+$PROJECT/2_fastp/Doxorubicin_40nM_1_trimmed.fq.gz \
+$PROJECT/2_fastp/Doxorubicin_40nM_2_trimmed.fq.gz \
+$PROJECT/2_fastp/Doxorubicin_40nM_3_trimmed.fq.gz \
+-o $PROJECT/2_fastp
