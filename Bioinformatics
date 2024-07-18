@@ -42,8 +42,10 @@ $APP gsnap
 -d humans 
 -N 1 
 -A sam 
--o ~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/3_gsnap/Doxorubicin_40nM_1.sam 
+-o /scratch/nfsilva/Bioinofrmatics/DOX40/3_gsnap/Doxorubicin_40nM_1.sam 
 ~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/2_fastp/Doxorubicin_40nM_1_trimmed_nonrRNA.fastq
+
+$APP gsnap -D ~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/0_reference -d humans -N 1 -A sam -o /scratch/nfsilva/Bioinofrmatics/DOX40/3_gsnap/Doxorubicin_40nM_1.sam  ~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/2_fastp/Doxorubicin_40nM_1_trimmed_nonrRNA.fastq
 
 
 APP="singularity exec \
