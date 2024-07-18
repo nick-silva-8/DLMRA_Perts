@@ -36,3 +36,17 @@ $APP gsnap \
 -N 1 \
 -A sam \
 -o "$PROJECT/3_gsnap/Cscut-CLP1835.sam"
+
+$APP gsnap 
+-D ~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/0_reference 
+-d humans 
+-N 1 
+-A sam 
+-o ~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/3_gsnap/Doxorubicin_40nM_1.sam 
+~/Bioinformatics/MDR/MDR_DATA/DOX_40uM/2_fastp/Doxorubicin_40nM_1_trimmed_nonrRNA.fastq
+
+
+singularity shell \
+-B /scratch/$USER/:/scratch/$USER \
+-B /scratch/rooksan/NCBI_repository/:/scratch/rooksan/NCBI_repository/ \
+/project/cugbf/software/gbf/CUCHG-GSL/rnaseq_tools_refbased.sif
